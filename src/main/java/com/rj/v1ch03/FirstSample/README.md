@@ -29,3 +29,117 @@ When we write down the number it called as number **Literal**
       has "code point" U+1D546 and is encoded by two units hex value D*35 DD46
 * Avoid char unless you know that you won't run into Unicode character >= U+10000
 * Character literals enclosed in single quotes: 'A', '\n', '\u2122'
+
+* ### The **boolean** Type
+* There  are two boolean values true , false
+* No conversion in between int and boolean i.e true to 0 and false to 1 and vice versa
+
+** All together Java has **8** Primitive Data Types
+* int,long,shot,byte
+* flot,double
+* char
+* boolean
+
+## Variables
+* Every variable must declare with a type, which comes before name of the Variable :
+   ```
+  int vacaionDaya;
+  ```
+* Initialization is Optional : 
+  ```
+  int days=365;
+  ```
+* Decleration can appear anywhere in block
+   ```
+   We can declar variable anywhere but it is suggested to Declare as close as possible to first use
+   i.e. near to its use
+  ```
+* Can assign new value using "=" oprator
+  ```
+  days=12;
+  ```
+* Constant Declaration with **final** 
+  ```
+  final int days=14;
+  ```
+  **final makes variable constant,final means once it is initialized, that's the final time you have chance to change it**
+
+## Mathematical Operation and Function
+
+* Arithmetic : +,-,*,/
+* Integer division and modulus: / and %(with integer operands ):
+   * 15/2 is 7
+   * 15%2 is 1
+   * 15.0/2 is 7.5
+* Math.sqrt(x) is square root of X
+* Math.pow(a,b) is a^b
+* Math.floorMod(a,b) is lik a%b with better behaviour for negative value
+  Math.floorMode(-15,2) = 1
+* Trigonometry and log functions:
+   * Math.sin, Math.log......
+
+**Starting from **Java 9** there is one convenient called **jshell**, and it gets executed directly, without the need of having to write **main()** and don't need to compile it.
+this interactive shell very useful for to explore small expects of java**
+
+## Hands on
+  ```
+  Open terminal and type "jshell"
+ 
+ c:/user> jshell
+  |  Welcome to JShell -- Version 20.0.2
+  |  For an introduction type: /help intro
+
+  jshell> 16/2
+  $1 ==> 8
+
+  jshell> 15/2
+  $2 ==> 7
+
+  jshell> 15%2
+  $3 ==> 1
+
+  jshell> 17.0/2
+  $4 ==> 8.5
+
+  jshell> Math.floorMod(-15,2)
+  $7 ==> 1
+
+  jshell> -15%2
+  $8 ==> -1
+
+  jshell> Math.sqrt(8)
+  $5 ==> 2.8284271247461903
+
+  jshell> Math.sqrt(4)
+  $6 ==> 2.0
+
+
+  ```
+ 
+## Type Conversion
+                         
+  char
+  
+  &darr;
+
+  int &larr; short &larr;  byte
+
+  &darr;
+  
+  float &rarr; double
+
+** ---- line represent data loss can be happened at the time of conversion**
+  ```mermaid 
+     graph LR 
+     A[byte :1] -->B[short :2]
+     B -->C[int :4]
+     G[char :1]-->C
+     C -->D[long :8]
+     C -.->E[float :4]
+     E -->F[double :8]
+     D -.->E
+     D -.->F
+     
+     
+  ```
+   
